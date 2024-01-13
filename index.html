@@ -6,12 +6,10 @@
     <title>Contact Form - SAFANA Events</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        
         body {
             font-family: 'Arial', sans-serif;
             background-image: url('sahara_desert.jpg');
             background-size: cover;
-            background: gray;
             background-position: center;
             margin: 0;
             padding: 0;
@@ -78,7 +76,7 @@
     </style>
 </head>
 <body>
-    <form id="myForm" action="https://mouatakidmohamed@gmail.com" method="POST" onsubmit="submitForm(event)">
+    <form id="myForm" action="https://formsubmit.co/mouatakidmohamed@gmail.com" method="POST" onsubmit="submitForm(event)">
         <h2>Contact Us - SAFANA Events</h2>
         <div style="display: flex; justify-content: space-between; gap: 10px;">
             <div style="flex: 1; margin-right: 5px;">
@@ -104,7 +102,37 @@
 
     <script>
         function submitForm(event) {
-            event.preventDefault(); 
+            event.preventDefault(); // Prevent the default form submission
+
+            // Get form data
+            var formData = new FormData(document.getElementById('myForm'));
+
+            // Use AJAX to submit form data
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', 'https://formsubmit.co/83e59cbbb340f8b17280e548ffbe5954', true);
+            xhr.setRequestHeader('Accept', 'application/json');
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+                    if (xhr.status == 200) {
+                        // Form submission successful, you can handle the response here
+                        console.log('Form submission successful');
+                        console.log(xhr.responseText);
+
+                        // Optionally, you can redirect the user to a thank-you page or show a success message
+                        // window.location.href = 'thank_you.html';
+                    } else {
+                        // Form submission failed, handle the error here
+                        console.error('Form submission failed');
+                        console.error(xhr.responseText);
+
+                        // Optionally, you can show an error message to the user
+                        // alert('Form submission failed. Please try again.');
+                    }
+                }
+            };
+
+            // Send the form data
+            xhr.send(formData);
         }
     </script>
 </body>
