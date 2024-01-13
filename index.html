@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form - SAFANA Events</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('sahara_desert.jpg');
+            background-size: cover;
+            background: gray;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        form {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+
+        h2 {
+            text-align: center;
+            color: #654321;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            color: #555;
+            font-size: 14px;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            margin-top: 6px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        input[type="submit"] {
+            background-color: #134636;
+            color: white;
+            cursor: pointer;
+            border: none;
+            border-radius: 6px;
+            padding: 12px;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0e3727;
+        }
+    </style>
+</head>
+<body>
+    <form id="myForm" action="https://mouatakidmohamed@gmail.com" method="POST" onsubmit="submitForm(event)">
+        <h2>Contact Us - SAFANA Events</h2>
+        <div style="display: flex; justify-content: space-between; gap: 10px;">
+            <div style="flex: 1; margin-right: 5px;">
+                <label for="Nom de la société">Nom de la société:</label>
+                <input type="text" id="Nom-de-la-societe" name="Nom de la société" required>
+            </div>
+        </div>
+
+        <label for="Nom & Prénom">Nom & Prénom:</label>
+        <input type="text" id="Nom-&-Prénom" name="Nom & Prénom" required>
+
+        <label for="email">Mail:</label>
+        <input type="email" id="Mail" name="Mail" required>
+
+        <label for="Téléphone">Téléphone:</label>
+        <input type="tel" id="Téléphone" name="Téléphone" required>
+
+        <label for="Commentaires">Commentaires:</label>
+        <textarea id="Commentaires" name="Commentaires" rows="4" placeholder="N'hésitez pas à partager vos commentaires ou à poser des questions..." required></textarea>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        function submitForm(event) {
+            event.preventDefault(); 
+        }
+    </script>
+</body>
+</html>
